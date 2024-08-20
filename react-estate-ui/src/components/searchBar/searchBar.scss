@@ -57,14 +57,19 @@
                 }
             }
             @include md{
-               with:auto;
+               with:200px;
 
                 &:nth-child(2),&:nth-child(3){
-                    width: auto;
+                    width: 200px;
                 }
             }
             @include sm{
                 padding: 20px;
+                with:auto;
+
+                &:nth-child(2),&:nth-child(3){
+                    width: auto;
+                }
             }
         }
         button{

@@ -31,9 +31,9 @@ export default function searchBar() {
           name="minPrice"
           min={0}
           max={100000}
-          placeholder="City Location"
+          placeholder="min price"
         />
-        <input type="number" name="" placeholder="City Location" />
+        <input type="number" name="" placeholder="max price" />
         <button><img src="/search.png" alt="" /></button>
       </form>
     </div>
