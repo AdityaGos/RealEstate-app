@@ -33,11 +33,7 @@ function App() {
         }
       ]
   
-    },
-    {
-      path: "/list",
-      element:<ListPage />
-    },
+    }
   ]);
   return (
    
