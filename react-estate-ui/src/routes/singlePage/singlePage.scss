@@ -1,9 +1,11 @@
 .singlePage{
     display: flex;
     height: 100%;
-
+  
     .details{
         flex:3;
+        height: 100%;
+        overflow-y: scroll;
 
         .wrapper{
             padding-right:50px ;
@@ -64,7 +66,7 @@
                     }
                 }
                 .bottomContainer{
-                    margin-top: 50px;
+                    margin-top: 30px;
                     color:#555;
                     line-height: 20px;
                 }
@@ -75,9 +77,94 @@
     .features{
         flex:2;
         background-color: #fcf5f3;
+        height: 100%;
+        overflow-y: scroll;
+
 
         .wrapper{
-            padding: 0px 20px;;
+            padding: 0px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            img{
+                height: 24px;
+                width: 24px;
+            }
+
+            .title{
+                font-weight: bold;
+                font-size:16px;
+                margin-bottom: 10px;
+            }
+            .feature{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .featureText{
+                    p{
+                        font-weight: 500;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .listVertical{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                background-color: white;
+                padding: 10px 20px;
+                border-radius: 10px;
+            }
+            .listHorizontal{
+                display: flex;
+                justify-content: space-between;
+                background-color: white;
+                padding: 20px 10px;
+                border-radius: 10px;
+            }
+
+            .sizes{
+                display: flex;
+                justify-content: space-between;
+
+                .size{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    background-color: white;
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+            }
+
+            .mapContainer{
+                width: 100%;
+                height: 200px;
+            }
+            .buttons{
+                display: flex;
+                justify-content: space-between;
+
+                button{
+                    padding: 10px 20px;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    background-color: white;
+                    border:1px solid #fece51;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    img{
+                        width: 16px;
+                        height: 16px;
+                    }
+
+
+                }
+            }
         }
     }
 
