@@ -19,9 +19,27 @@
 
         .arrow{
             flex:1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             img{
-                height: 50px;
+                width: 50px;
+
+                &.right{
+                    transform: rotate(180deg);
+                }
             }
+        }
+        .close{
+            position: absolute;
+            top:0;
+            color:white;
+            font-size: 36px;
+            top:0;
+            right: 0;
+            font-weight: bold;
+            padding: 40px;
+            cursor:pointer;
         }
 
         .imageContainer{
