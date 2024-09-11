@@ -59,6 +59,51 @@ nav{
             padding: 12px 24px; 
             margin:20px;
         }
+        .user{
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+
+            span{
+                @include sm{
+                    display: none;
+                }
+            }
+            img{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+
+            }
+
+            .profile{
+                // padding: 12px 24px;
+                background-color: #fece51;
+                cursor: pointer;
+                border: none;
+                position: relative;
+                border-radius: 5px;
+                // width: 200px;
+                width: max-content;
+
+                .notification{
+                    position: absolute;
+                    top: -8px;
+                    right: -8px;
+                    background-color: red;
+                    border-radius: 50%;
+                    color: white;
+                    height: 26px;
+                    width: 26px;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+
+                }
+
+            }
+        }
 
         .register{
             background-color: #fece51;
@@ -101,6 +146,8 @@ nav{
                 }
             }
         }
+
+
     }
 
 }
