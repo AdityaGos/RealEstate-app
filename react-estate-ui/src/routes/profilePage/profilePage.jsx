@@ -1,4 +1,5 @@
 import List from '../../components/list/list'
+import Chat from '../../components/chat/chat'
 import './profilePage.scss'
 function profilePage() {
   return (
@@ -22,11 +23,12 @@ function profilePage() {
       <div className="title">
         <h1>Saved List</h1>
       </div>
-      <List/>
+      {/* <List/> */}
         </div>
       </div>
       <div className="chatContainer">
         <div className="wrapper">
+          <Chat/>
 
         </div>
       </div>

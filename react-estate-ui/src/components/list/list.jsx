@@ -5,7 +5,7 @@ import './list.scss'
 function List() {
   return (
     <div className='list'>
-        heello
+        
         {listData.map(elem=>(
                 <Card key={elem.id} item={elem} />
 

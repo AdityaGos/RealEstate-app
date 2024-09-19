@@ -14,4 +14,9 @@
     }
 }
 
+@mixin mob{
+    @media(max-width:500px){
+        @content;
+    }
+}
 

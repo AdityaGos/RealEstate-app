@@ -1,19 +1,33 @@
+@import '../../responsive.scss';
 .profilePage{
     display: flex;
     height: 100%;
    
+   @include md{
+    flex-direction: column;
+    overflow: scroll;
+    
+ 
+   }
     .details{
         flex:3;
         overflow-y: scroll;
-        &::-webkit-scrollbar {
-            display: none;
-        }
+        ::-webkit-scrollbar{
+            display: block;
+         }
+         @include md{
+            flex:none;
+            height: max-content;
+           }
         
         .wrapper{
             display: flex;
             flex-direction: column;
             gap: 50px;
             padding-right:50px;
+            @include sm{
+                padding-right: 0;
+            }
 
             .title{
                 display: flex;
@@ -53,11 +67,21 @@
 
     .chatContainer{
         flex:2;
-        background-color: #fcf5f3;
+        // background-color: #fcf5f3;
         height: 100%;
+        padding: 0px 30px;
+        @include md{
+            flex:none;
+            height: max-content;
+           }
 
+           @include sm{
+            padding: 0;
+           }
         .wrapper{
             padding: 0px 20px;
+            // height: inherit;
+            height: 100%;
         }
 
     }
