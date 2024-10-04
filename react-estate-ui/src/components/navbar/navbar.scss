@@ -63,8 +63,10 @@ nav{
             display: flex;
             align-items: center;
             font-weight: bold;
+            gap:10px;
 
             span{
+                text-transform: capitalize;
                 @include sm{
                     display: none;
                 }
@@ -104,10 +106,17 @@ nav{
 
             }
         }
-
-        .register{
-            background-color: #fece51;
+        .registerWrapper{
+            display: flex;
+            flex-direction: row;
+            .register{
+                 background-color: #fece51;
+            }
         }
+
+        // .register{
+        //    
+        // }
 
         .menuIcon{
             display: none;
