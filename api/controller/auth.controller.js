@@ -17,9 +17,8 @@ export const register = async (req, res) => {
           OR: [{ username }, { email }]
         }
       });
-      ApiError
-    if(existingUser.username ==username) {return res.status(400).send({message:ERROR['User_username_key']})}
-    if(existingUser.email ==email){return res.status(400).send({message:ERROR['User_email_key']})}
+    if(existingUser && existingUser.username ==username) {return res.status(400).send({message:ERROR['User_username_key']})}
+    if(existingUser && existingUser.email ==email){return res.status(400).send({message:ERROR['User_email_key']})}
     const hashedPassword = await bcrypt.hash(password, 10);
     //create a new user
    await prisma.user.create({
@@ -40,6 +39,7 @@ export const register = async (req, res) => {
 };
 export const login = async (req, res) => {
  
+  console.log("inside login controller")
   const { username, password } = req.body;
 
   
@@ -50,7 +50,7 @@ export const login = async (req, res) => {
     })
      //check if user exists
     if (!user) {
-      return res.status(401).json({ message: "User not Found" });
+      return res.status(469).json({ message: "User not Found" });
     }
 
      // match the password
