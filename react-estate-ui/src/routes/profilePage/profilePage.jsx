@@ -1,20 +1,42 @@
 import List from '../../components/list/list'
 import Chat from '../../components/chat/chat'
 import './profilePage.scss'
-function profilePage() {
+import apiRequest from '../../lib/apiRequest'
+import { Link, useNavigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../../context/authContext'
+
+function ProfilePage() {
+  const {currentUser,updateUser} = useContext(AuthContext)
+  const navigate = useNavigate() 
+  const handleLogout= async()=>
+  {
+
+    try{
+      await apiRequest.post('auth/logout')
+      updateUser(null)
+      navigate('/login')
+    }catch(e){console.log(e)}
+  }
   return (
     <div className='profilePage'>
       <div className="details">
         <div className="wrapper">
-      <div className="title">
-        <h1>User Info</h1>
-        <button className="">updateProfile</button>
-      </div>
+       <Link to='/profile/update'>
       <div className="info">
-        <span> Avatar <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt=''/> </span>
-      <span>UserName: <b>Aditya Goswami</b></span>
-      <span>E-mail:: <b>aditya@gmail.com</b></span>
+       <div className="userInfo">
+      <span>{currentUser.username}</span>
+      <span>{currentUser.email}</span>
+       </div>
+ 
+      <div className="avatarContainer">
+     <img src={currentUser.avatar || '/noavatar.jpg'} alt=''/>
       </div>
+      <button onClick={handleLogout}>Logout</button>
+      </div>
+       </Link>
+     
+      
       <div className="title">
         <h1>My List</h1>
         <button className="">Create New Post</button>
@@ -36,4 +58,4 @@ function profilePage() {
   )
 }
 
-export default profilePage
+export default ProfilePage
