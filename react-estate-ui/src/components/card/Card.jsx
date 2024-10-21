@@ -2,12 +2,15 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Card.scss";
 export default function Card({ item }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  // onClick={navigate(`/${item.id}`)} 
   return (
     <div className="card">
-      <div onClick={navigate(`/${item.id}`)} className="imageContainer">
+      <Link to={`/${item.id}`}>
+      <div className="imageContainer">
         <img src={item.img} alt="" />
       </div>
+      </Link>
       <div className="textContainer">
         <div className="titleContainer">
           <h2 className="title">
